@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Знайомство з JS</title>
+</head>
+<body>
+	<div>
+		<img id="currentPhoto" src="images/photo1.jpg" />
+	</div>
+	<button onclick="showPreviousPhoto()">Previous</button>
+	<button onclick="showNextPhoto()">Next</button>
+
+	<input type="submit" value="jjjj" onclick="showTouch()">
+	
+	<script>
+		var name="Rostyslav Marenych";
+		var surname="Marenych";
+		var c=[surname,name];
+		function showTouch(){
+				alert("My name is " + c);
+		}
+	</script>
+
+<script>
+	var photosCount = 5;
+	var currentPhotoIndex = 1;
+
+		function showNextPhoto(){
+			currentPhotoIndex++;
+			if(currentPhotoIndex==photosCount+1){ 
+				currentPhotoIndex=1;
+			}
+			
+			var elem = document.getElementById("currentPhoto");
+			elem.src = "images/photo" + currentPhotoIndex + ".jpg";
+		}
+
+		function showPreviousPhoto(){
+			currentPhotoIndex--;
+			if(currentPhotoIndex==0){
+				currentPhotoIndex=photosCount;
+			}
+			var elem = document.getElementById("currentPhoto");
+			elem.src = "images/photo" + currentPhotoIndex + ".jpg";
+		}
+</script>
+
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
